@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>Home Page</title>
+
+    <style>
+      h1{
+        font-family: 'Montserrat', sans-serif;
+      }
+    </style>
+</head>
+<body>
+    <!-- Awal Navbar -->
+    <div class="navbar">
+        <nav class="navbar fixed-top navbar-dark bg-dark">
+          <div class="container">
+          <img src="logo.png" alt="#" title style="height: 3.8rem;">
+            <div class="navbar-nav ml-auto">
+                <a href="...">
+                    <button type="button" class="btn btn-primary">Login</button>
+                </a>
+              </div>
+          </div>
+          </nav>
+    </div>
+    <!-- Akhir Navbar -->
+    <!-- hello world  akwokaskawo -->
+
+    <!-- Awal Jumbotron -->
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <div class="text">
+          <h1 >Tracking Alumni SMKN 26 Jakarta</h1>
+          <p >Sebuah website yang menginformasikan mengenai Alumni-Alumni SMKN 26 Jakarta yang telah sukses dibidang keahliannya</p>
+          <a href="#search" class="btn btn-primary">Cari Alumni</a>
+        </div>
+       
+      </div>
+      </div>
+      <!-- Akhir Jumbotron -->
+      
+    <!-- Searching Area -->
+    <div class="container">
+    <section id="search">
+      <div class="search-area">
+
+        <div class="row">
+          <div class="col-6">
+            <div class="input-group">
+              <input type="text" name="search" class="form-control" placeholder="search..." value="{{ old('search') }}">
+              <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+
+          <div class="col">
+            <select class="form-control" name="filter_jurusan">
+             <option selected hidden>---Pilih Jurusan---</option>
+              @foreach($jurusans as $jurusan)
+              <option value="{{ $jurusan->id }}">{{ $jurusan->name }}</option>
+              @endforeach
+            </select>
+          </div>
+            
+            <div class="col">
+              <select class="form-control" name="filter_angkatan">
+                <option selected hidden>---Pilih Angkatan---</option>
+                @foreach($angkatans as $angkatan)
+                <option value="{{ $jurusan->id }}">{{ $angkatan->name }}</option>
+                @endforeach
+              </select>
+            </div>
+        </div>
+
+        <!-- table -->
+      <div class="container">
+        <div class="table-responsive">
+        <table class="table table-hover">
+          <thead class="bg-primary">
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Nama</th>
+              <th scope="col">Jurusan</th>
+              <th scope="col">Angkatan</th>
+              <th scope="col">Pekerjaan</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Ade Sendy Firmansyah</td>
+              <td>TEDK</td>
+              <td>47</td>
+              <td>Robotic programmer</td>
+              <td><a class="btn btn-primary btn-sm" href="#" role="button">Visit Profile</a></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Aris Danang</td>
+              <td>SIJA</td>
+              <td>48</td>
+              <td>Web Developer</td>
+              <td><a class="btn btn-primary btn-sm" href="#" role="button">Visit Profile</a></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Dimas Nur Alif</td>
+              <td>KGSP</td>
+              <td>49</td>
+              <td>Architect</td>
+              <td><a class="btn btn-primary btn-sm" href="#" role="button">Visit Profile</a></td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Putra Bagaskara</td>
+              <td>TTL</td>
+              <td>50</td>
+              <td>Businessman</td>
+              <td><a class="btn btn-primary btn-sm" href="#" role="button">Visit Profile</a></td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Surya Okta Ramadhan</td>
+              <td>TFLM</td>
+              <td>51</td>
+              <td>Engineer</td>
+              <td><a class="btn btn-primary btn-sm" href="#" role="button">Visit Profile</a></td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Simon Pahala</td>
+              <td>TMPO</td>
+              <td>52</td>
+              <td>Car Engineer</td>
+              <td><a class="btn btn-primary btn-sm" href="#" role="button">Visit Profile</a></td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <!-- akhir table -->
+      </div>
+    </section> 
+    </div>
+    
+  
+    <!-- Akhir Searching area -->
+
+    <!-- footer -->
+  <div class="footer bg-dark">
+    <footer>
+      <div class="footer-content">
+        <h3>SMKN 26 Jakarta</h3>
+        <p>Jl. Balai Pustaka Baru No 1 Rawamangun, Jakarta Timur Kode Pos 13220</p>
+      </div>
+      <div class="footer-bottom">
+        <p>copyright &copy;KELOMPOK 3</p>
+      </div>
+    </footer>
+  </div>
+  <!-- Akhir footer -->
+</body>
+    
